@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>МебельМаркет</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f5f5f5;
+}
+
+header{
+background:#2c2c2c;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+nav{
+background:#444;
+padding:10px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#ffd700;
+}
+
+.container{
+width:90%;
+margin:auto;
+padding:20px;
+}
+
+.section{
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:8px;
+}
+
+.products{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.product{
+background:#eee;
+padding:15px;
+width:250px;
+border-radius:6px;
+text-align:center;
+}
+
+.product img{
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:5px;
+}
+
+button{
+margin-top:10px;
+padding:10px;
+background:#333;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>МебельМаркет</h1>
+<p>Интернет-магазин мебели</p>
+</header>
+
+<nav>
+<a href="#home">Главная</a>
+<a href="#catalog">Каталог</a>
+<a href="#about">О магазине</a>
+<a href="#contacts">Контакты</a>
+</nav>
+
+<div class="container">
+
+<section id="home" class="section">
+<h2>Добро пожаловать</h2>
+<p>
+Мы продаём современную мебель для дома и офиса.
+Удобные диваны, столы и шкафы по доступным ценам.
+</p>
+</section>
+
+<section id="catalog" class="section">
+<h2>Каталог мебели</h2>
+
+<div class="products">
+
+<div class="product">
+<img src="https://picsum.photos/300/200?1">
+<h3>Диван</h3>
+<p>Цена: 850 BYN</p>
+<button>Подробнее</button>
+</div>
+
+<div class="product">
+<img src="https://picsum.photos/300/200?2">
+<h3>Стол</h3>
+<p>Цена: 320 BYN</p>
+<button>Подробнее</button>
+</div>
+
+<div class="product">
+<img src="https://picsum.photos/300/200?3">
+<h3>Шкаф</h3>
+<p>Цена: 640 BYN</p>
+<button>Подробнее</button>
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="section">
+<h2>О магазине</h2>
+<p>
+Мы работаем с 2020 года и предлагаем качественную мебель
+для квартир, домов и офисов.
+</p>
+</section>
+
+<section id="contacts" class="section">
+<h2>Контакты</h2>
+<p>Телефон: +375 29 000 00 00</p>
+<p>Email: info@mebel.by</p>
+<p>Адрес: г. Минск</p>
+</section>
+
+</div>
+
+<footer>
+<p>© 2026 МебельМаркет</p>
+</footer>
+
+</body>
+</html>
