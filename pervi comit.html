@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мой сайт</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f4f4;
+}
+
+header{
+    background:#333;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+nav{
+    background:#555;
+    padding:10px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:yellow;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+    padding:20px;
+}
+
+.section{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:8px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+}
+
+.card{
+    background:#eee;
+    padding:15px;
+    flex:1;
+    border-radius:6px;
+}
+
+.card h3{
+    margin-top:0;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    width:300px;
+}
+
+input, textarea{
+    margin-bottom:10px;
+    padding:8px;
+}
+
+button{
+    padding:10px;
+    background:#333;
+    color:white;
+    border:none;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Мой первый сайт</h1>
+<p>Стартовый шаблон HTML</p>
+</header>
+
+<nav>
+<a href="#">Главная</a>
+<a href="#">О нас</a>
+<a href="#">Услуги</a>
+<a href="#">Контакты</a>
+</nav>
+
+<div class="container">
+
+<div class="section">
+<h2>О сайте</h2>
+<p>
+Это стартовый шаблон сайта. Его можно использовать как основу
+для любого проекта: интернет-магазина, блога или сервиса.
+</p>
+</div>
+
+<div class="section">
+<h2>Наши услуги</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Разработка сайтов</h3>
+<p>Создание современных веб-приложений и сайтов.</p>
+</div>
+
+<div class="card">
+<h3>Дизайн</h3>
+<p>Создание интерфейсов и макетов для веб-проектов.</p>
+</div>
+
+<div class="card">
+<h3>Поддержка</h3>
+<p>Обслуживание и развитие уже существующих сайтов.</p>
+</div>
+
+</div>
+</div>
+
+<div class="section">
+<h2>Обратная связь</h2>
+
+<form>
+<input type="text" placeholder="Ваше имя">
+<input type="email" placeholder="Email">
+<textarea placeholder="Сообщение"></textarea>
+<button type="submit">Отправить</button>
+</form>
+
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 Мой сайт</p>
+</footer>
+
+</body>
+</html>
