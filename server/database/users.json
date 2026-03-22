@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Никита",
+    "email": "nikita10@gmail.com",
+    "login": "nikita10",
+    "phone": "+375291234567",
+    "password": "26042007"
+  },
+  {
+    "id": 2,
+    "name": "Никита123",
+    "email": "nikita10@gmail.com",
+    "login": "nikita1000",
+    "phone": "+375291234567",
+    "password": "26042007"
+  }
+]
