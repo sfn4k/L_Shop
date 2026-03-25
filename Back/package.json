@@ -1,0 +1,19 @@
+{
+  "name": "l_shop-back",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix ../client run build && tsc",
+    "check": "npm --prefix ../client run check && tsc --noEmit",
+    "start": "npm run build && node dist/server/server.js",
+    "dev": "npm run build && node --watch dist/server/server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.5.2",
+    "typescript": "^5.9.2"
+  }
+}

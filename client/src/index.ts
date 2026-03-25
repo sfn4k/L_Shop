@@ -18,7 +18,7 @@ import { renderCatalogPage } from "./components/catalog/index.js";
 import { renderDeliveryPage } from "./components/delivery/index.js";
 import { renderHeader } from "./components/header/index.js";
 import { navigate, normalizeRoute, readFiltersFromLocation } from "./router/index.js";
-import type { AppRoute, AppState, CatalogFilters, FlashMessage, ProductResponse, SessionState } from "./types.js";
+import type { AppRoute, AppState, CatalogFilters } from "./types.js";
 
 const state: AppState = {
     session: {
@@ -46,7 +46,7 @@ function getCurrentRoute(): AppRoute {
     return normalizeRoute(window.location.pathname);
 }
 
-function showMessage(type: FlashMessage extends null ? never : "info" | "error", text: string): void {
+function showMessage(type: "info" | "error", text: string): void {
     state.flash = { type, text };
 }
 
@@ -95,7 +95,7 @@ async function refreshSession(): Promise<void> {
 }
 
 async function refreshCatalog(): Promise<void> {
-    const response: ProductResponse = await fetchProducts(state.filters);
+    const response = await fetchProducts(state.filters);
     state.products = response.items;
     state.categories = response.categories;
 }

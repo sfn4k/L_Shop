@@ -7,7 +7,6 @@ export function renderAuthPage(session: SessionState): string {
             <main class="page">
                 <section class="auth-card">
                     <h2 class="section-title">Профиль пользователя</h2>
-                    <p class="muted">Сессия активна 10 минут с момента входа или регистрации.</p>
                     <div class="summary-list">
                         <div class="summary-row"><span>Имя</span><strong>${escapeHtml(session.user.name)}</strong></div>
                         <div class="summary-row"><span>Email</span><strong>${escapeHtml(session.user.email)}</strong></div>
@@ -23,7 +22,6 @@ export function renderAuthPage(session: SessionState): string {
         <main class="page auth-layout">
             <section class="auth-card">
                 <h2 class="section-title">Авторизация</h2>
-                <p class="muted">После входа отображаются активная корзина и доставки.</p>
                 <form data-form="login">
                     <div class="field">
                         <label for="login-auth">Логин</label>
@@ -41,7 +39,6 @@ export function renderAuthPage(session: SessionState): string {
 
             <section class="auth-card">
                 <h2 class="section-title">Регистрация</h2>
-                <p class="muted">Форма отмечена атрибутом data-registration под автопроверку.</p>
                 <form data-form="register" data-registration>
                     <div class="field">
                         <label for="name-register">Имя</label>

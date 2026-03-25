@@ -145,10 +145,6 @@ textarea {
 }
 
 .hero {
-    display: grid;
-    gap: 24px;
-    grid-template-columns: 1.2fr 0.8fr;
-    align-items: stretch;
     margin-bottom: 28px;
 }
 
@@ -166,15 +162,6 @@ textarea {
 
 .hero__card {
     padding: 32px;
-}
-
-.hero__eyebrow {
-    margin: 0 0 12px;
-    color: var(--accent);
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-size: 0.78rem;
 }
 
 .hero__title {
@@ -213,24 +200,12 @@ textarea {
     font-size: 0.9rem;
 }
 
-.hero__aside {
-    padding: 24px;
-    display: grid;
-    gap: 16px;
-    background:
-        linear-gradient(145deg, rgba(187, 90, 44, 0.1), rgba(255, 255, 255, 0.9)),
-        var(--surface-strong);
-}
-
-.hero__aside h3,
 .panel__title,
 .section-title {
     margin: 0 0 10px;
     font-size: 1.2rem;
 }
 
-.hero__aside p,
-.panel__hint,
 .muted {
     color: var(--muted);
     line-height: 1.5;
@@ -468,7 +443,6 @@ textarea {
 }
 
 @media (max-width: 920px) {
-    .hero,
     .auth-layout,
     .basket-layout,
     .delivery-layout {

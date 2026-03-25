@@ -34,7 +34,7 @@ export function renderHeader(route: AppRoute, session: SessionState): string {
         <header class="topbar">
             <div class="brand">
                 <h1 class="brand__title">L_Shop</h1>
-                <span class="brand__subtitle">Интернет-магазин мебели и декора</span>
+                <span class="brand__subtitle">Интернет-магазин мебели</span>
             </div>
             <div class="topbar__actions">
                 <nav class="nav">

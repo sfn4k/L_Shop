@@ -51,7 +51,6 @@ export function renderDeliveryPage(session: SessionState): string {
         <main class="page delivery-layout">
             <section class="delivery-card">
                 <h2 class="section-title">Оформление доставки</h2>
-                <p class="muted">После успешного оформления корзина очищается, а товары переходят в историю доставок.</p>
                 <form data-form="delivery" data-delivery-form>
                     <div class="field">
                         <label for="delivery-address">Адрес</label>
@@ -84,7 +83,7 @@ export function renderDeliveryPage(session: SessionState): string {
             </section>
 
             <aside class="delivery-card">
-                <h2 class="section-title">Активные и прошлые доставки</h2>
+                <h2 class="section-title">Мои доставки</h2>
                 ${session.deliveries.length > 0
                     ? session.deliveries.map(renderDeliveryItem).join("")
                     : '<div class="empty-state"><p class="muted">Доставок пока нет.</p></div>'}

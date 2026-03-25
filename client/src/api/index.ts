@@ -1,7 +1,6 @@
 import type {
     BasketView,
     CatalogFilters,
-    DeliveryStatus,
     DeliveryView,
     PaymentMethod,
     ProductResponse,
@@ -149,21 +148,9 @@ export function clearBasket(): Promise<BasketView> {
     });
 }
 
-export function fetchDeliveries(status?: DeliveryStatus): Promise<DeliveryView[]> {
-    const query = status ? `?status=${status}` : "";
-    return request<DeliveryView[]>(`/deliveries${query}`);
-}
-
 export function createDelivery(payload: DeliveryPayload): Promise<DeliveryView> {
     return request<DeliveryView>("/deliveries", {
         method: "POST",
         body: payload,
-    });
-}
-
-export function updateDeliveryStatus(deliveryId: number, status: DeliveryStatus): Promise<DeliveryView> {
-    return request<DeliveryView>(`/deliveries/${deliveryId}/status`, {
-        method: "PATCH",
-        body: { status },
     });
 }

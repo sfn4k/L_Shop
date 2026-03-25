@@ -1,4 +1,5 @@
 import type { CatalogFilters, Product, SessionState } from "../../types.js";
+import { resolveProductImage } from "../../utils/product-images.js";
 import { escapeHtml, formatPrice } from "../../utils/format.js";
 
 type CatalogPageProps = {
@@ -9,8 +10,9 @@ type CatalogPageProps = {
 };
 
 function renderProductCard(product: Product): string {
-    const image = product.image
-        ? `<img class="product-card__image" src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}">`
+    const resolvedImage = resolveProductImage(product);
+    const image = resolvedImage
+        ? `<img class="product-card__image" src="${escapeHtml(resolvedImage)}" alt="${escapeHtml(product.name)}" loading="lazy">`
         : '<div class="product-card__image"></div>';
     const availabilityClass = product.available ? "" : " availability--empty";
     const availabilityLabel = product.available ? `В наличии: ${product.stock}` : "Нет в наличии";
@@ -20,10 +22,6 @@ function renderProductCard(product: Product): string {
         <article class="product-card">
             ${image}
             <div class="product-card__body">
-                <div class="product-card__meta">
-                    <span>${escapeHtml(product.category)}</span>
-                    <span>${escapeHtml(product.material)}</span>
-                </div>
                 <h3 data-title>${escapeHtml(product.name)}</h3>
                 <p class="product-card__description">${escapeHtml(product.description)}</p>
                 <div class="product-card__meta">
@@ -60,17 +58,14 @@ function renderProductCard(product: Product): string {
 export function renderCatalogPage(props: CatalogPageProps): string {
     const productsCount = props.products.length;
     const availableCount = props.products.filter((product) => product.available).length;
-    const registeredLabel = props.session.user ? "Корзина и доставки уже доступны в шапке." : "Войдите, чтобы оформлять корзину и доставку.";
+    const registeredLabel = props.session.user ? "Можно сразу добавлять товары в корзину." : "Войдите, чтобы оформлять корзину и доставку.";
 
     return `
         <main class="page">
             <section class="hero">
                 <div class="hero__card">
-                    <p class="hero__eyebrow">Каталог магазина</p>
-                    <h2 class="hero__title">Мебель, которую можно сразу выбрать, добавить в корзину и оформить доставкой.</h2>
-                    <p class="hero__text">
-                        Главная страница доступна всем. Поиск, сортировка, фильтры и количество товара работают прямо в каталоге.
-                    </p>
+                    <h2 class="hero__title">Каталог мебели</h2>
+                    <p class="hero__text">${registeredLabel}</p>
                     <div class="hero__stats">
                         <div class="stat">
                             <span class="stat__value">${productsCount}</span>
@@ -86,16 +81,10 @@ export function renderCatalogPage(props: CatalogPageProps): string {
                         </div>
                     </div>
                 </div>
-                <aside class="hero__aside hero__card">
-                    <h3>Как проверять</h3>
-                    <p>${registeredLabel}</p>
-                    <p>Тестовые сценарии закрываются через data-title, data-price, регистрацию, корзину и доставку.</p>
-                </aside>
             </section>
 
             <section class="panel">
                 <h3 class="panel__title">Фильтры каталога</h3>
-                <p class="panel__hint">Поддерживаются query-параметры: поиск, категория, сортировка, доступность и диапазон цены.</p>
                 <form class="filters-form" data-form="catalog-filters">
                     <div class="field">
                         <label for="search">Поиск</label>
